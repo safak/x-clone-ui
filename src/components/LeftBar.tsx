@@ -65,7 +65,7 @@ const LeftBar = () => {
     },
   ];
   return (
-    <div className="h-screen flex flex-col justify-between sticky top-0 pt-2 pb-8 gap-4">
+    <div className="h-screen flex flex-col justify-between sticky top-0 pt-2 pb-8 gap-9">
       {/* Logo & Menu */}
       <div className="flex flex-col gap-4 text-lg items-center xxl:items-start">
         {/* lOGO */}
@@ -106,7 +106,18 @@ const LeftBar = () => {
           Post
         </Link>
       </div>
-      <div>User</div>
+      <div className="flex items-center justify-between px-1">
+        <div className="flex items-center gap-2">
+          <div className="relative w-10 h-10 rounded-full overflow-hidden">
+            <Image src={"/general/avatar.png"} alt="avatar" fill />
+          </div>
+          <div className="hidden xxl:flex flex-col items-start ">
+            <span className="font-bold">Zulfikar</span>
+            <span className="text-sm text-textGray">@zulnurdiana</span>
+          </div>
+        </div>
+        <div className="hidden xxl:block">...</div>
+      </div>
     </div>
   );
 };
