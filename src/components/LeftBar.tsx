@@ -65,7 +65,7 @@ const LeftBar = () => {
     },
   ];
   return (
-    <div className="h-screen flex flex-col justify-between sticky top-0 pt-2 pb-8 gap-9">
+    <div className="h-screen flex flex-col justify-between sticky top-0 pt-2 pb-8 gap-4">
       {/* Logo & Menu */}
       <div className="flex flex-col gap-4 text-lg items-center xxl:items-start">
         {/* lOGO */}
