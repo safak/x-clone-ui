@@ -106,17 +106,20 @@ const LeftBar = () => {
           Post
         </Link>
       </div>
-      <div className="flex items-center justify-between px-1">
-        <div className="flex items-center gap-2">
+      {/* USER */}
+      <div className="flex items-center justify-between px-1 ">
+        <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-full overflow-hidden">
             <Image src={"/general/avatar.png"} alt="avatar" fill />
           </div>
-          <div className="hidden xxl:flex flex-col items-start ">
-            <span className="font-bold">Zulfikar</span>
-            <span className="text-sm text-textGray">@zulnurdiana</span>
+          <div className="hidden xxl:flex flex-col">
+            <span className="font-bold text-sm">Zulfikar Nurdiana</span>
+            <span className="text-sm text-textGray cursor-pointer">
+              @zulnurdiana
+            </span>
           </div>
         </div>
-        <div className="hidden xxl:block">...</div>
+        <div className="hidden xxl:block cursor-pointer font-bold">...</div>
       </div>
     </div>
   );
