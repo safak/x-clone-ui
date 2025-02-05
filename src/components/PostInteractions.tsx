@@ -2,8 +2,8 @@ import React from "react";
 
 const PostInteractions = () => {
   return (
-    <div className="flex items-center text-textGray my-2 justify-between">
-      <div className="flex items-center gap-32 flex-1">
+    <div className="flex items-center justify-between text-textGray my-2 gap-4 lg:gap-8 xl:gap-16">
+      <div className="flex items-center justify-between flex-1">
         {/* COMMENTS */}
         <div className="flex items-center gap-4 justify-between">
           <div className="group cursor-pointer flex items-center gap-2">
