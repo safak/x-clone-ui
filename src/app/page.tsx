@@ -18,18 +18,18 @@ const Homepage = () => {
         <Link href={"/"} className="pb-3 flex items-center">
           Following
         </Link>
-        <Link href={"/"} className="pb-3 flex items-center">
+        <Link href={"/"} className="pb-3 hidden md:flex items-center">
           Node JS
         </Link>
-        <Link href={"/"} className="pb-3 flex items-center">
+        <Link href={"/"} className="pb-3 hidden md:flex items-center">
           Next JS
         </Link>
-        <Link href={"/"} className="pb-3 flex items-center">
+        <Link href={"/"} className="pb-3 hidden md:flex items-center">
           Google
         </Link>
       </div>
-      <Feed />
       <Share />
+      <Feed />
     </div>
   );
 };
