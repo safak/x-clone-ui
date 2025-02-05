@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "imagekit": "^6.0.0",
     "imagekitio-next": "^1.0.1",
     "next": "15.1.0",
     "react": "^19.0.0",
