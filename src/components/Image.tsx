@@ -8,18 +8,19 @@ type imageProps = {
   h?: number;
   alt: string;
   className?: string;
+  tr?: boolean;
 };
 
 const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 
-const Image = ({ path, w, h, alt, className }: imageProps) => {
+const Image = ({ path, w, h, alt, className, tr }: imageProps) => {
   return (
     <IKImage
       urlEndpoint={urlEndpoint}
       path={path}
-      width={w}
-      height={h}
-      transformation={[{ width: `${w}`, height: `${h}` }]}
+      {...(tr
+        ? { transformation: [{ width: `${w}`, height: `${h}` }] }
+        : { width: w, height: h })}
       alt={alt}
       className={className}
     />

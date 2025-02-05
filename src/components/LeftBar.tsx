@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "./Image";
 
 const LeftBar = () => {
   const menuList = [
@@ -70,7 +70,7 @@ const LeftBar = () => {
       <div className="flex flex-col gap-4 text-lg items-center xxl:items-start">
         {/* lOGO */}
         <Link href={"/"} className="p-2 rounded-full hover:bg-[#181818]">
-          <Image src={"icons/logo.svg"} width={24} height={24} alt="logo" />
+          <Image path={"icons/logo.svg"} w={24} h={24} alt="logo" />
         </Link>
 
         {/* Menu */}
@@ -82,10 +82,10 @@ const LeftBar = () => {
               className="p-2 rounded-full hover:bg-[#181818] flex items-center gap-4"
             >
               <Image
-                src={`icons/${item.icon}`}
+                path={`icons/${item.icon}`}
                 key={item.id}
-                width={24}
-                height={24}
+                w={24}
+                h={24}
                 alt={item.name}
               />
               <span className="hidden xxl:inline">{item.name}</span>
@@ -97,7 +97,7 @@ const LeftBar = () => {
           href={"/"}
           className="xxl:hidden bg-white text-black font-bold w-12 h-12 flex items-center justify-center rounded-full"
         >
-          <Image src={"icons/post.svg"} width={24} height={24} alt="tweet" />
+          <Image path={"icons/post.svg"} w={24} h={24} alt="tweet" />
         </Link>
         <Link
           href={"/"}
@@ -110,7 +110,13 @@ const LeftBar = () => {
       <div className="flex items-center justify-between px-1 ">
         <div className="flex items-center gap-3">
           <div className="relative w-10 h-10 rounded-full overflow-hidden">
-            <Image src={"/general/avatar.png"} alt="avatar" fill />
+            <Image
+              path={"/general/avatar.png"}
+              alt="avatar"
+              w={100}
+              h={100}
+              tr={true}
+            />
           </div>
           <div className="hidden xxl:flex flex-col">
             <span className="font-bold text-sm">Zulfikar Nurdiana</span>
