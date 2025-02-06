@@ -1,8 +1,22 @@
+import { imagekit } from "@/utils";
 import Image from "./Image";
 import PostInfo from "./PostInfo";
 import PostInteractions from "./PostInteractions";
 
 const Post = () => {
+  const getImage = async (id_photo: string) => {
+    new Promise((resolve, reject) => {
+      imagekit.getFileDetails(id_photo, function (error, result) {
+        if (error) reject(error);
+        else resolve(console.log(result));
+      });
+    });
+  };
+
+  const fileku = getImage("67a46902432c47641629c8ad");
+
+  console.log("ISI FILE KU ADALAH :", fileku);
+
   return (
     <div className="p-4 border-y-[1px] border-borderGray">
       {/* TYPE POSTS */}

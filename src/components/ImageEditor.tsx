@@ -31,7 +31,7 @@ const ImageEditor = ({
       <div className="bg-black rounded-xl p-12 flex flex-col gap-4">
         {/* TOP */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4">
             <svg
               width={32}
               viewBox="0 0 24 24"

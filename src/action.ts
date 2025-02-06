@@ -1,19 +1,24 @@
 "use server";
 
-import ImageKit from "imagekit";
+import { imagekit } from "./utils";
 
-const imagekit = new ImageKit({
-  publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY!,
-  urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT!,
-  privateKey: process.env.PRIVATE_KEY!,
-});
-
-export const shareAction = async (formData: FormData) => {
+export const shareAction = async (
+  formData: FormData,
+  settings: { type: "original" | "wide" | "square"; sensitive: boolean }
+) => {
   const file = formData.get("file") as File;
   // const desc = formData.get("desc") as string;
 
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
+
+  const transformation = `w-600 ${
+    settings.type === "square"
+      ? "tr-1-1"
+      : settings.type === "wide"
+      ? "tr-16-9"
+      : ""
+  }`;
 
   imagekit.upload(
     {
@@ -21,7 +26,10 @@ export const shareAction = async (formData: FormData) => {
       fileName: file.name,
       folder: "/posts",
       transformation: {
-        pre: "w-600",
+        pre: transformation,
+      },
+      customMetadata: {
+        sensitive: settings.sensitive,
       },
     },
     function (error, result) {

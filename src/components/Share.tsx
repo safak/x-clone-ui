@@ -25,7 +25,10 @@ const Share = () => {
   const previewURL = media ? URL.createObjectURL(media) : "";
 
   return (
-    <form className="flex p-4 gap-4 flex-wrap" action={shareAction}>
+    <form
+      className="flex p-4 gap-4 flex-wrap"
+      action={(formData) => shareAction(formData, settings)}
+    >
       {/* PHOTO */}
       <div className="relative rounded-full overflow-hidden w-10 h-10">
         <Image path={"general/avatar.png"} alt="avatar" w={120} h={120} />
@@ -46,6 +49,13 @@ const Share = () => {
               alt="preview"
               width={600}
               height={600}
+              className={`w-full ${
+                settings.type === "original"
+                  ? "h-full object-contain"
+                  : settings.type === "square"
+                  ? "aspect-square object-cover"
+                  : "aspect-video object-cover"
+              }`}
             />
             <div
               className="absolute top-2 left-2 bg-black bg-opacity-50 text-white px-3 py-1 text-sm cursor-pointer rounded-full font-bold"
