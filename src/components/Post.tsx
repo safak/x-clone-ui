@@ -3,19 +3,27 @@ import Image from "./Image";
 import PostInfo from "./PostInfo";
 import PostInteractions from "./PostInteractions";
 
-const Post = () => {
-  const getImage = async (id_photo: string) => {
-    new Promise((resolve, reject) => {
+interface FileDetailResponse {
+  width: number;
+  height: number;
+  filePath: string;
+  url: string;
+  customMetadata?: { sensitive: boolean };
+}
+
+const Post = async () => {
+  const getImage = async (id_photo: string): Promise<FileDetailResponse> => {
+    return new Promise((resolve, reject) => {
       imagekit.getFileDetails(id_photo, function (error, result) {
         if (error) reject(error);
-        else resolve(console.log(result));
+        else resolve(result as FileDetailResponse);
       });
     });
   };
 
-  const fileku = getImage("67a46902432c47641629c8ad");
+  const fileku = await getImage("67a5bc2a432c476416a17ded");
 
-  console.log("ISI FILE KU ADALAH :", fileku);
+  console.log(fileku);
 
   return (
     <div className="p-4 border-y-[1px] border-borderGray">
@@ -66,13 +74,19 @@ const Post = () => {
               quia. At quia modi accusamus, id perspiciatis doloribus, rem in
               iure dolorum, dolorem quibusdam.
             </p>
-            <Image
-              path={"general/post.jpeg"}
-              alt="post"
-              w={600}
-              h={600}
-              className="rounded-sm"
-            />
+
+            {fileku && (
+              <Image
+                path={fileku.filePath}
+                alt="post"
+                w={fileku.width}
+                h={fileku.height}
+                className={
+                  fileku.customMetadata?.sensitive === true ? "blur-lg" : ""
+                }
+              />
+            )}
+
             <PostInteractions />
           </div>
         </div>
