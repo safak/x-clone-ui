@@ -5,3 +5,5 @@ export const imagekit = new ImageKit({
   urlEndpoint: process.env.NEXT_PUBLIC_URL_ENDPOINT!,
   privateKey: process.env.PRIVATE_KEY!,
 });
+
+let jaja;
