@@ -24,8 +24,8 @@ const PostModal = () => {
         <div className="py-8 flex gap-4">
           <div className="relative w-10 h-10 rounded-full overflow-hidden">
             <Image
-              path="general/avatar.png"
-              alt="Lama Dev"
+              path="general/Avatar.jpg"
+              alt="David Nix"
               w={100}
               h={100}
               tr={true}

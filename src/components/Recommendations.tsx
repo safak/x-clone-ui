@@ -9,7 +9,7 @@ const Recommendations = () => {
         {/* IMAGE AND USER INFO */}
         <div className='flex items-center gap-2'>
           <div className='relative rounded-full overflow-hidden w-10 h-10'>
-            <Image path="general/avatar.png" alt="John Doe" w={100} h={100} tr={true}/>
+            <Image path="general/Avatar.jpg" alt="John Doe" w={100} h={100} tr={true}/>
           </div>
           <div className=''>
             <h1 className="text-md font-bold">John Doe</h1>
@@ -23,7 +23,7 @@ const Recommendations = () => {
         {/* IMAGE AND USER INFO */}
         <div className='flex items-center gap-2'>
           <div className='relative rounded-full overflow-hidden w-10 h-10'>
-            <Image path="general/avatar.png" alt="John Doe" w={100} h={100} tr={true}/>
+            <Image path="general/Avatar.jpg" alt="John Doe" w={100} h={100} tr={true}/>
           </div>
           <div className=''>
             <h1 className="text-md font-bold">John Doe</h1>
@@ -37,7 +37,7 @@ const Recommendations = () => {
         {/* IMAGE AND USER INFO */}
         <div className='flex items-center gap-2'>
           <div className='relative rounded-full overflow-hidden w-10 h-10'>
-            <Image path="general/avatar.png" alt="John Doe" w={100} h={100} tr={true}/>
+            <Image path="general/Avatar.jpg" alt="John Doe" w={100} h={100} tr={true}/>
           </div>
           <div className=''>
             <h1 className="text-md font-bold">John Doe</h1>

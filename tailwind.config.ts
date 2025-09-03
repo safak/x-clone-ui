@@ -6,6 +6,7 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class", // enable dark mode support via 'dark:' class
   theme: {
     extend: {
       screens: {
@@ -27,5 +28,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/aspect-ratio"), // helps with media aspect ratios
+  ],
 } satisfies Config;

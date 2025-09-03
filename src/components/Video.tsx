@@ -1,26 +1,29 @@
 "use client";
-import { IKVideo } from "imagekitio-next";
-
-const urlEndpoint = process.env.NEXT_PUBLIC_URL_ENDPOINT;
 
 type VideoTypes = {
-  path: string;
+  src: string;
+  poster?: string;
   className?: string;
 };
 
-const Video = ({ path, className }: VideoTypes) => {
+const Video = ({ src, poster, className }: VideoTypes) => {
   return (
-    <IKVideo
-      urlEndpoint={urlEndpoint}
-      path={path}
+    <video
       className={className}
-      transformation={[
-        { width: "1920", height: "1080", q: "90" },
-        { raw: "l-text,i-LamaDev,fs-100,co-white,l-end" },
-      ]}
       controls
-    />
+      playsInline
+      preload="metadata"       // ✅ ensures metadata loads without forcing full download
+      crossOrigin="anonymous"  // ✅ needed for CORS + proxy
+      poster={poster}
+    >
+      <source
+        src={`/api/proxy?url=${encodeURIComponent(src)}`}
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
   );
 };
 
 export default Video;
+
