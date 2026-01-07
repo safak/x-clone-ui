@@ -1,3 +1,7 @@
+# X Clone UI
+
+This is a UI clone of X (formerly Twitter), built with modern web technologies. The project features a responsive layout with core social media functionalities including post creation, image uploads, and user interactions.
+
 ## Getting Started
 
 First, run the development server:
